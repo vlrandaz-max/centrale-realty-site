@@ -247,3 +247,12 @@ address{font-style:normal}
 .faq details p{margin:.7rem 0 0;max-width:62ch}
 .prose .btn+.btn{margin-left:10px}
 @media(max-width:760px){.usp ul{font-size:.66rem;letter-spacing:.14em}.prose .btn+.btn{margin:10px 0 0}}
+
+/* Highlights bar: label above serif value, hairline dividers */
+.usp ul.wrap{max-width:1500px;margin-inline:auto;padding-block:18px;display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:0;letter-spacing:.06em;text-transform:none}
+.usp li{padding:2px clamp(18px,3vw,48px);text-align:center;white-space:nowrap}
+.usp li+li{border-left:1px solid rgba(186,163,131,.35)}
+.usp b{display:block;font:500 .6rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:#8f7d62;margin-bottom:9px}
+.usp i{display:block;font:400 clamp(1rem,1.25vw,1.2rem)/1.2 var(--serif);font-style:normal;letter-spacing:.06em;color:var(--gold)}
+@media(max-width:1100px){.usp ul.wrap{grid-template-columns:1fr 1fr;row-gap:16px;padding-inline:var(--gutter)}.usp li{white-space:normal;padding:2px 12px}.usp li:nth-child(3){border-left:0}}
+@media(max-width:560px){.usp ul.wrap{row-gap:14px;padding-inline:10px}.usp li{padding:2px 8px}.usp b{font-size:.54rem;letter-spacing:.22em;margin-bottom:7px}.usp i{font-size:.92rem;letter-spacing:.03em}}
