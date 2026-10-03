@@ -39,3 +39,10 @@ jobs:
           FTP_INSECURE_TLS: ${{ vars.FTP_INSECURE_TLS }}
           FORCE: ${{ github.event.inputs.force }}
         run: python3 scripts/ftps_deploy.py
+      - name: Diagnose FTPS certificate (only when the upload failed)
+        if: ${{ failure() && env.HAS_FTP == 'true' }}
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+        run: |
+          echo "Certificate the server presents (public information):"
+          echo | openssl s_client -starttls ftp -connect "$FTP_HOST:21" 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName || true
