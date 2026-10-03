@@ -37,6 +37,7 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_REMOTE_DIR: ${{ vars.FTP_REMOTE_DIR }}
           FTP_INSECURE_TLS: ${{ vars.FTP_INSECURE_TLS }}
+          FTP_TLS_SERVERNAME: ${{ vars.FTP_TLS_SERVERNAME || 'prod.phx3.secureserver.net' }}
           FORCE: ${{ github.event.inputs.force }}
         run: python3 scripts/ftps_deploy.py
       - name: Diagnose FTPS certificate (only when the upload failed)
