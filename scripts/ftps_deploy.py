@@ -4,7 +4,8 @@ Never deletes remote files. Skips .git, .github, scripts, .cpanel.yml and README
 import os, ssl, sys, ftplib
 HOST = os.environ.get("FTP_HOST", "").strip()
 USER = os.environ.get("FTP_USERNAME", "").strip()
-PASSWORD = os.environ.get("FTP_PASSWORD", "")
+PASSWORD = os.environ.get("FTP_PASSWORD", "").rstrip("
+")  # a pasted secret often ends with a line break
 REMOTE = (os.environ.get("FTP_REMOTE_DIR") or "/").strip() or "/"
 FORCE = (os.environ.get("FORCE") or "").lower() == "true"
 PORT = int(os.environ.get("FTP_PORT") or 21)
