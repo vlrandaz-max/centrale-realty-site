@@ -21,9 +21,16 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      HAS_FTP: ${{ secrets.FTP_HOST != '' && secrets.FTP_USERNAME != '' && secrets.FTP_PASSWORD != '' }}
     steps:
+      - name: Skip until FTP secrets are added
+        if: ${{ env.HAS_FTP != 'true' }}
+        run: echo "FTP secrets are not set yet, so nothing was deployed. Add FTP_HOST, FTP_USERNAME and FTP_PASSWORD under Settings > Secrets and variables > Actions."
       - uses: actions/checkout@v4
+        if: ${{ env.HAS_FTP == 'true' }}
       - name: Upload to GoDaddy over FTPS
+        if: ${{ env.HAS_FTP == 'true' }}
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
