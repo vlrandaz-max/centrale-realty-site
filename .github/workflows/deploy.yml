@@ -1,0 +1,33 @@
+name: Deploy to GoDaddy (FTPS)
+
+# Runs automatically whenever the site files change on main, and can also be run by hand
+# (Actions tab > Deploy to GoDaddy (FTPS) > Run workflow). It uploads to the web root over
+# encrypted FTPS using three secrets stored in this repository's settings. It never deletes
+# anything on the server and only uploads files whose size changed (tick "force" to upload all).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Upload every file even if the size matches (true/false)'
+        required: false
+        default: 'false'
+
+concurrency:
+  group: ftps-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload to GoDaddy over FTPS
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ vars.FTP_REMOTE_DIR }}
+          FORCE: ${{ github.event.inputs.force }}
+        run: python3 scripts/ftps_deploy.py

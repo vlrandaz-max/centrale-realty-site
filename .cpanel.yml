@@ -3,4 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/jbcuvgp53x82/public_html/
     - /bin/mkdir -p $DEPLOYPATH
-    - if command -v rsync >/dev/null 2>&1; then rsync -rlt --exclude='.git' --exclude='.cpanel.yml' --exclude='README.md' ./ $DEPLOYPATH; else tar --exclude='.git' --exclude='.cpanel.yml' --exclude='README.md' -cf - . | (cd $DEPLOYPATH && tar -xf -); fi
+    - if command -v rsync >/dev/null 2>&1; then rsync -rlt --exclude='.git' --exclude='.github' --exclude='scripts' --exclude='.cpanel.yml' --exclude='README.md' ./ $DEPLOYPATH; else tar --exclude='.git' --exclude='.github' --exclude='scripts' --exclude='.cpanel.yml' --exclude='README.md' -cf - . | (cd $DEPLOYPATH && tar -xf -); fi
