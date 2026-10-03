@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/jbcuvgp53x82/public_html/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /usr/bin/rsync -rlt --exclude='.git' --exclude='.cpanel.yml' --exclude='README.md' --exclude='.htpasswds' --exclude='cgi-bin' --exclude='.well-known/acme-challenge' ./ $DEPLOYPATH
