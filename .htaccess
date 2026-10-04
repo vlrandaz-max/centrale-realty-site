@@ -30,11 +30,13 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 # Friendly 404 page (also used when a request is blocked).
 ErrorDocument 404 /404.html
 ErrorDocument 403 /404.html
+ErrorDocument 410 /410.html
 # GoDaddy's server answers errors with a bare one-line message that wins over the lines above.
 # <If> sections are applied last, so this wins over the host default (Apache 2.4).
 <If "true">
 ErrorDocument 404 /404.html
 ErrorDocument 403 /404.html
+ErrorDocument 410 /410.html
 </If>
 
 # Serve index.html for folder URLs (/for-sale/ etc.) and don't list directories.
