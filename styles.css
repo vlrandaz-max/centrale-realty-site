@@ -297,3 +297,11 @@ address{font-style:normal}
 .lst-dt th{font:500 .74rem/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);width:42%;padding-right:1rem}
 .lst-disc{font-size:.8rem;color:var(--muted);margin-top:2rem}
 @media(max-width:700px){.lst-facts{grid-template-columns:1fr 1fr}.lst-figs{grid-template-columns:1fr}.lst-actions .btn{width:100%;box-sizing:border-box;text-align:center}}
+/* "Now leasing" call-out on the Commercial page */
+.now-leasing{background:var(--black);color:#fff;text-align:center;padding:clamp(28px,5vw,48px) clamp(20px,4vw,40px);margin:0 0 2.4rem;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
+.now-leasing .nl-tag{display:inline-block;font:500 .74rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:.55rem 1rem}
+.now-leasing h2{color:#fff;font-size:clamp(1.9rem,5vw,3.1rem);margin:.7rem 0 .4rem}
+.now-leasing h2 em{color:var(--gold)}
+.now-leasing p{color:rgba(255,255,255,.85);margin:0 auto 1.4rem;max-width:34rem}
+.now-leasing .btn{color:var(--black)}
+@media(max-width:520px){.now-leasing .btn{width:100%;box-sizing:border-box}}
