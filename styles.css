@@ -312,3 +312,4 @@ address{font-style:normal}
 .lst-back{margin:0 0 1.8rem}.lst-back .btn{background:var(--black);border-color:var(--black);color:var(--gold);font-size:.88rem;padding:1.15rem 2.3rem}.lst-back .btn:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
 @media(max-width:560px){.lst-back .btn{display:block;text-align:center;padding:1.1rem 1rem;font-size:.8rem;letter-spacing:.16em}}
 .lst-center{flex-direction:column;align-items:center;justify-content:center;text-align:center}.lst-center .lst-actions{justify-content:center}.lst-back{text-align:center}
+.lst-uniform img{aspect-ratio:8/5;object-fit:cover;height:auto}
