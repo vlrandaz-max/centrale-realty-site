@@ -315,3 +315,11 @@ address{font-style:normal}
 .lst-uniform img{aspect-ratio:8/5;object-fit:cover;height:auto}
 .plan-wide{margin:1.2rem 0 1.6rem}.plan-wide h3{font:500 .78rem/1.2 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 .7rem}.plan-wide img{width:100%;height:auto;display:block;border:1px solid var(--line)}
 .plan-narrow{max-width:640px}
+/* 8-slide show (Suite 101): each slide gets its own 5s slot in a 40s cycle */
+.slides[data-n="8"] img{animation-name:slidefade8;animation-duration:40s}
+.slides[data-n="8"] img:nth-child(2){animation-delay:5s}.slides[data-n="8"] img:nth-child(3){animation-delay:10s}.slides[data-n="8"] img:nth-child(4){animation-delay:15s}.slides[data-n="8"] img:nth-child(5){animation-delay:20s}.slides[data-n="8"] img:nth-child(6){animation-delay:25s}.slides[data-n="8"] img:nth-child(7){animation-delay:30s}.slides[data-n="8"] img:nth-child(8){animation-delay:35s}
+@keyframes slidefade8{0%{opacity:0;transform:scale(1)}2.5%{opacity:1}12.5%{opacity:1;transform:scale(1.08)}15%{opacity:0;transform:scale(1.08)}100%{opacity:0;transform:scale(1)}}
+.stg-tag{position:absolute;right:max(16px,2.2vw);bottom:18px;z-index:2;opacity:0;font:500 .68rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(11,11,11,.62);padding:.55rem .8rem;pointer-events:none;animation:stgfade8 40s infinite}
+@keyframes stgfade8{0%{opacity:0}2.5%{opacity:1}12.5%{opacity:1}15%{opacity:0}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.stg-tag{animation:none;opacity:0}}
+.sp-img{position:relative;display:block}.sp-flag{position:absolute;right:10px;bottom:10px;font:500 .64rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(11,11,11,.66);padding:.45rem .65rem}
