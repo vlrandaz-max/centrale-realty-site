@@ -390,3 +390,7 @@ address{font-style:normal}
 .nl-photo:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .nl-photo+.now-leasing{margin-top:0;border-top:0}
 .nl-photo{margin-bottom:0}
+/* "Staged" note sits in a thin strip under the header photo (/2490/) */
+.stg-strip{position:relative;height:2.1rem;background:var(--cream);border-bottom:1px solid var(--line)}
+.stg-tag.stg-below{position:absolute;right:max(16px,2.2vw);top:50%;bottom:auto;transform:translateY(-50%);background:none;color:var(--muted);padding:0;font-size:.6rem;letter-spacing:.16em}
+@media(prefers-reduced-motion:reduce){.stg-tag.stg-below{animation:none}}
