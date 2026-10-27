@@ -403,3 +403,12 @@ address{font-style:normal}
 /* For Lease hub: twilight photo behind the Annsbury block */
 .now-leasing.nl-bg{background:linear-gradient(rgba(11,11,11,.50),rgba(11,11,11,.62)),url(assets/images/annsbury-banner-twilight.jpg) center/cover no-repeat;padding:clamp(48px,8vw,96px) clamp(20px,4vw,40px)}
 .now-leasing.nl-bg h2,.now-leasing.nl-bg p{text-shadow:0 2px 14px rgba(0,0,0,.65)}
+
+/* Commercial page: calm, softly blurred staged photo behind the Now Leasing block, dark scrim for contrast */
+.now-leasing.nl-bg-suite{position:relative;overflow:hidden;isolation:isolate;background:#1d1b19;padding:clamp(52px,8vw,100px) clamp(20px,4vw,40px) clamp(64px,9vw,110px)}
+.now-leasing.nl-bg-suite::before{content:"";position:absolute;inset:-14px;z-index:-2;background:url(assets/images/suite-100-staged-gray.jpg) center 62%/cover no-repeat;filter:blur(2px) saturate(.95)}
+.now-leasing.nl-bg-suite::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(14,13,12,.56),rgba(14,13,12,.72))}
+.now-leasing.nl-bg-suite h2,.now-leasing.nl-bg-suite p{text-shadow:0 2px 16px rgba(0,0,0,.55)}
+.now-leasing.nl-bg-suite h2 em{color:#ecd9ad}
+.now-leasing.nl-bg-suite p{color:#fff}
+.now-leasing .nl-note{position:absolute;left:0;right:0;bottom:16px;font:500 .62rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8)}
